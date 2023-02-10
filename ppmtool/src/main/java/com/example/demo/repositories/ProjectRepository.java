@@ -14,4 +14,9 @@ public interface ProjectRepository extends CrudRepository<Project, Long> {
 		return null;
 	}
 	
+	Iterable<Project> findAllByProjectLeader(String username);
+	
+	Project findByprojectIdentifier(String projectId); //jpa repository automatically returns project by identifier
+	//not necessary to define declaration as these methods are already accessible by projectrepository object
+	
 }
