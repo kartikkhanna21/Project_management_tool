@@ -28,6 +28,7 @@ public class Backlog {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="project_id",nullable = false)
 	@JsonIgnore
+	//joincolumn creates a new column name "project_id" which is the id columnn from project table
 	//jsonignore helps in preventing an infinite recursion between parent and child in relationship
 	private Project project;
 	//the variable name "project" above is same as mapped by attribute in Project model

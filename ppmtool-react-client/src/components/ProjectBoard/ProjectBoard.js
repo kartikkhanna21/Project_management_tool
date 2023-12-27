@@ -4,6 +4,7 @@ import Backlog from './Backlog';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { getBacklog } from '../../actions/backlogActions';
+import styles from "./ProjectBoard.module.css";
 
 class ProjectBoard extends Component {
 
@@ -37,21 +38,21 @@ class ProjectBoard extends Component {
             if (project_tasks.length < 1) {
                 if (errors.projectNotFound) {
                     return (
-                        <div className="alert alert-danger text-center" role="alert">
+                        <div style={{margin:"3rem 1rem"}} className="alert alert-danger text-center" role="alert">
                             {errors.projectNotFound}
                         </div>
                     )
                 }
                 else if(errors.projectIdentifier){
                     return (
-                        <div className="alert alert-danger text-center" role="alert">
+                        <div style={{margin:"3rem 1rem"}} className="alert alert-danger text-center" role="alert">
                             {errors.projectIdentifier}
                         </div>
                     )
                 }
                 else {
                     return (
-                        <div className="alert alert-info text-center" role="alert">
+                        <div style={{margin:"3rem 1rem"}} className={`${styles.alert_info} alert text-center`} role="alert">
                             No Project Tasks on this board
                         </div>
                     )
@@ -67,8 +68,8 @@ class ProjectBoard extends Component {
         boardContent = boardAlgorithm(errors,project_tasks);
         return (
             <div>
-                <div className="container">
-                    <Link to={`/addProjectTask/${id}`} className="btn btn-primary mb-3">
+                <div style={{marginTop:"2rem"}} className="container">
+                    <Link to={`/addProjectTask/${id}`} className={`${styles.btn_createProject} btn mb-3`}>
                         <i className="fas fa-plus-circle"> Create Project Task</i>
                     </Link>
                     <br />

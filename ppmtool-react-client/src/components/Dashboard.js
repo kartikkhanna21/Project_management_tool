@@ -4,6 +4,7 @@ import CreateProjectButton from "./Project/CreateProjectButton";
 import { connect } from "react-redux";
 import { getProjects } from "../actions/projectActions";
 import PropTypes from "prop-types";
+import styles from './Dashboard.module.css';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -18,7 +19,7 @@ class Dashboard extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className="display-4 text-center">Projects</h1>
+                            <h1 className={`${styles.dashboard_heading} text-center`}>Projects</h1>
                             <br />
                             <CreateProjectButton />
 

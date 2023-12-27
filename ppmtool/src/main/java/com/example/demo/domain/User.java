@@ -47,6 +47,8 @@ public class User implements UserDetails {
 	    private Date update_At;
 
 	    //OneToMany with Project
+	    //mappedby defines the wning side of the relationship ie user
+	    //orphanremoval true means if user us removed the all assosciated projects will  be removed
 	    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "user", orphanRemoval = true)
 	    private List<Project> projects = new ArrayList<>();
 

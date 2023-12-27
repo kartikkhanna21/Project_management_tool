@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProject, getProject } from "../../actions/projectActions";
 import classnames from "classnames";
+import styles from '../UserManagement/Auth.module.css';
 
 class AddProject extends Component {
 
@@ -91,10 +92,10 @@ class AddProject extends Component {
 
         const heading = () => {
             if (id) {
-                return <h5 className="display-4 text-center">Update Project form</h5>
+                return <h5 className={`${styles.form_header_project} display-4 text-center`}>Update Project</h5>
             }
             else {
-                return <h5 className="display-4 text-center">Create Project form</h5>
+                return <h5 className={`${styles.form_header_project} display-4 text-center`}>Create Project</h5>
             }
         }
 
@@ -116,17 +117,17 @@ class AddProject extends Component {
 
                 <div className="project">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-8 m-auto">
+                        <div className={`${styles.row}`}>
+                            <div className={`${styles.form_container_projectTask} col-md-5`}>
                                 {
                                     heading()
                                 }
                                 <hr />
                                 <form onSubmit={this.onSubmit}>
-                                    <div className="form-group">
+                                    <div className={`${styles.input_style} form-group`}>
                                         <input
                                             type="text"
-                                            className={classnames("form-control form-control-lg", {
+                                            className={classnames(`${styles.form_control} `, {
                                                 "is-invalid": errors.projectName
                                             })}
                                             placeholder="Project Name"
@@ -142,12 +143,12 @@ class AddProject extends Component {
                                             null}
 
                                     </div>
-                                    <div className="form-group">
+                                    <div className={`${styles.input_style} form-group`}>
                                         {this.state.id?
                                             (
                                                 <input
                                                 type="text"
-                                                className={classnames("form-control form-control-lg", {
+                                                className={classnames(`${styles.form_control} `, {
                                                     "is-invalid": errors.projectIdentifier
                                                 })}
                                                 placeholder="Unique Project ID"
@@ -160,7 +161,7 @@ class AddProject extends Component {
                                             (
                                                 <input
                                                 type="text"
-                                                className={classnames("form-control form-control-lg", {
+                                                className={classnames(`${styles.form_control} `, {
                                                     "is-invalid": errors.projectIdentifier
                                                 })}
                                                 placeholder="Unique Project ID"
@@ -178,9 +179,9 @@ class AddProject extends Component {
                                             :
                                             null}
                                     </div>
-                                    <div className="form-group">
+                                    <div className={`${styles.input_style} form-group`}>
                                         <textarea
-                                            className={classnames("form-control form-control-lg", {
+                                            className={classnames(`${styles.form_control} `, {
                                                 "is-invalid": errors.description
                                             })}
                                             placeholder="Project Description"
@@ -195,21 +196,27 @@ class AddProject extends Component {
                                             :
                                             null}
                                     </div>
-                                    <h6>Start Date</h6>
-                                    <div className="form-group">
+                                    <div style={{marginTop:"1rem",color:"black"}}>
+                                        <p style={{color:"black"}}>Start Date</p>
+                                    </div>
+                                    
+                                    <div className={`${styles.input_style} form-group`}>
                                         <input
                                             type="date"
-                                            className="form-control form-control-lg"
+                                            className={`${styles.form_control}`}
                                             name="start_date"
                                             value={this.state.start_date}
                                             onChange={this.onChange}
                                         />
                                     </div>
-                                    <h6>Estimated End Date</h6>
-                                    <div className="form-group">
+                                    <div style={{marginTop:"1rem",color:"black"}}>
+                                        <p style={{color:"black"}}>Estimated End Date</p>
+                                    </div>
+                                    
+                                    <div className={`${styles.input_style} form-group`}>
                                         <input
                                             type="date"
-                                            className="form-control form-control-lg"
+                                            className={`${styles.form_control}`}
                                             name="end_date"
                                             value={this.state.end_date}
                                             onChange={this.onChange}
@@ -218,7 +225,7 @@ class AddProject extends Component {
 
                                     <input
                                         type="submit"
-                                        className="btn btn-primary btn-block mt-4"
+                                        className={`${styles.btn_secondary} btn btn-block mt-4`}
                                     />
                                 </form>
                             </div>

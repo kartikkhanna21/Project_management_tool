@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { login } from '../../actions/securityActions';
+import styles from './Auth.module.css';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   constructor() {
@@ -47,15 +49,15 @@ class Login extends Component {
       <div>
         <div className="login">
           <div className="container">
-            <div className="row">
-              <div className="col-md-8 m-auto">
-                <h1 className="display-4 text-center">Log In</h1>
+            <div className={`${styles.row}`}>
+              <div className={`${styles.form_container} col-md-5`}>
+                <h1 className={`${styles.form_header_login} display-4 text-center`}>Login</h1>
                 <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
+                  <div className={`${styles.input_style} form-group`}>
                     <input type="email"
-                      className={classnames("form-control form-control-lg", {
+                      className={classnames( `${styles.form_control} `, {
                         "is-invalid": errors.username
-                      })}
+                      }) }
                       placeholder="Email Address (Username)" name="username"
                       onChange={(e) => { this.setState({ username: e.target.value }) }}
                       value={this.state.username} />
@@ -67,9 +69,9 @@ class Login extends Component {
                       null
                     }
                   </div>
-                  <div className="form-group">
+                  <div className={`${styles.input_style} form-group`}>
                     <input type="password"
-                      className={classnames("form-control form-control-lg", {
+                      className={classnames(`${styles.form_control} `, {
                         "is-invalid": errors.password
                       })}
                       placeholder="Password" name="password"
@@ -84,7 +86,12 @@ class Login extends Component {
                       null
                     }
                   </div>
-                  <input type="submit" className="btn btn-info btn-block mt-4" />
+                  <div className={styles.button_container}>
+                    <input type="submit" className={`${styles.btn_secondary} btn btn-block mt-4`} />
+                  </div>
+                  <div style={{color:"black",marginTop:"1rem"}}>
+                    <font >Don't have an account? <Link style={{color:"purple"}} to="/register">Signup</Link> </font>
+                  </div>
                 </form>
               </div>
             </div>

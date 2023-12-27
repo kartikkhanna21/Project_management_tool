@@ -1,0 +1,48 @@
+.nav_style{
+    background-color: transparent;
+}
+.navbar_brand {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: var(--bs-navbar-brand-font-size);
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.navbar_brand:hover{
+    color: white;
+    text-decoration: underline;
+}
+.nav_link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav_link:hover {
+    font-weight: 500;
+    color: white;
+    text-decoration: underline;
+
+}
+.ul_screen{
+
+}
+@media screen and (max-width:991px){
+    .ul_screen {
+        margin-bottom: 0.5rem!important;
+        margin-left: 1rem;
+    }
+}
+.userName_style:hover{
+    text-decoration: none;
+}
+.userName_icon{
+    margin-right: 2px;
+}

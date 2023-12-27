@@ -1,7 +1,12 @@
 img {
   width: 100%;
 }
-
+.App{
+  background: rgb(70,13,201);
+  background: linear-gradient(110deg, rgb(57 4 127) 0%, rgba(154,43,201,1) 100%);
+  min-height: 150vh;
+  font-family: 'Libre Franklin', sans-serif;
+}
 .navbar {
   background-color: #e3f2fd;
 }
